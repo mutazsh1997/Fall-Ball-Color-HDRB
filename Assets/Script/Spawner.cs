@@ -12,31 +12,9 @@ public class Spawner : MonoBehaviour
     public float ballonScale;
 
     [SerializeField]private float EdgeScrren;
-    private Vector3 screenBounds;
     private playerMovement player;
 
-    private void Awake()
-    {
-        level = PlayerPrefs.GetInt("Level", 1);
-
-        if (level <= 20)
-            ballonScale = 0.8f;
-        if (level > 20 && level <= 50)
-            ballonScale = 0.9f;
-        if (level > 50 && level <= 100)
-            ballonScale = 1f;
-        if (level > 100)
-            ballonScale = 1.1f;
-
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        //EdgeScrren = screenBounds.x - 0.3f;
-        player = FindObjectOfType<playerMovement>();
-    }
+   
 
     // Update is called once per frame
     void Update()
